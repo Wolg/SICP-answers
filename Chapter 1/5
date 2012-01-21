@@ -1,0 +1,3 @@
+Applicative or Normal order evaluation. 
+With applicative-order evaluation, the expression that Ben entered for evaluation will infinite loop, becouse of "p" will be try calculate itself;
+With normal-order evaluation, all be fine, because the "p" does not even need to calculate.
