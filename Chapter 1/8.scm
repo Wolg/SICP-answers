@@ -1,0 +1,16 @@
+(define (sqr x) (* x x))
+(define (cube x) (* x x x))
+
+(define (sqrt3 x)
+  (define e 0.001)
+  (define (sqrt3-iter guess prev-guess)
+    (define (improve guess)
+      (/ (+ (/ x (sqr guess)) (* 2 guess))
+      3))
+    (define (good-enough? guess prev-guess)
+      (< (abs (/ (- guess prev-guess) prev-guess)) e))
+    (if (good-enough? guess prev-guess)
+        guess
+        (sqrt3-iter (improve guess) 
+        guess)))
+  (sqrt3-iter 1.0 0.5))
